@@ -1,6 +1,13 @@
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Switch, Route } from 'react-router-dom';
+import HomePage from '../_pages/HomePage/HomePage';
+import MoviesPage from '../_pages/MoviesPage/MoviesPage';
+import MovieDetailsPage from '../_pages/MovieDetailsPage/MovieDetailsPage';
+import Cast from '../_pages/Cast/Cast';
+import NotFoundMovie from '../_pages/NotFoundMovie/NotFoundMovie';
+import Reviews from '../_pages/Reviews/Reviews';
 import Container from '../Container';
 // import Searchbar from '../Searchbar';
 // import MyLoader from '../Loader';
@@ -78,6 +85,29 @@ function App() {
           <img src={largeImage.largeImageURL} alt={largeImage.tags} />
         </Modal>
       )} */}
+      <Switch>
+        {/* <Route path="/" exact>
+          <HomePage />
+        </Route>
+
+        <Route path="/movies">
+          <MoviesPage />
+        </Route>
+
+        <Route path="/movies/:movieId">
+          <MovieDetailsPage />
+        </Route>
+
+        <Route path="/movies/:movieId/cast">
+          <Cast />
+        </Route>
+        <Route path="/movies/:movieId/reviews">
+          <Reviews />
+        </Route>
+        <Route>
+          <NotFoundMovie />
+        </Route> */}
+      </Switch>
     </Container>
   );
 }
