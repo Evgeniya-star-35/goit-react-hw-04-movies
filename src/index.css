@@ -12,6 +12,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+background-image: url('https://img2.freepng.ru/20180326/rse/kisspng-popcorn-discount-theater-film-cinema-movie-theatre-5ab8ef3337c586.3795319015220692992285.jpg');
+  background-repeat: no-repeat;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+
 }
 
 code {

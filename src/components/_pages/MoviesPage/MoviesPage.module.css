@@ -1,0 +1,32 @@
+.searchForm input {
+  width: 400px;
+  height: 30px;
+  margin-bottom: 40px;
+}
+
+.searchForm button {
+  height: 32px;
+  width: 70px;
+}
+.searchForm span:hover,
+.searchForm span:focus {
+  color: #101921;
+  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
+.title{
+  font-weight: 500;
+  font-size: 24px;
+  color:rgb(93, 236, 217);
+}
+.title:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.link {
+  text-decoration: none;
+}

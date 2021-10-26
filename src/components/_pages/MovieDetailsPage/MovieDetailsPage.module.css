@@ -1,0 +1,44 @@
+.movieCard {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
+.movieCardInfo {
+  margin-left: 15px;
+}
+
+.poster {
+  width: 200px;
+  height: auto;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.score {
+  text-transform: capitalize;
+}
+
+.genreList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.genreList li {
+  margin-right: 10px;
+}
+.additionalInfo {
+  font-family: sans-serif;
+}
+
+.adInfoList li {
+  margin-bottom: 5px;
+}
+
+.link {
+  color: blue;
+}
