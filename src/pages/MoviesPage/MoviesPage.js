@@ -1,15 +1,18 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Switch, Route, Link, useHistory, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PageHeading from '../../components/PageHeading/PageHeading';
+// import NoFound from '../../NoFound';
 /*instruments*/
 import queryString from 'query-string';
-import Api from '../../../Services/API';
+import Api from '../../Services/API';
 import s from './MoviesPage.module.css';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import NotFound from '../NotFoundMovie/NotFoundMovie';
 /* components */
 const MovieDetailsPage = lazy(() =>
-  import('../../_pages/MovieDetailsPage/MovieDetailsPage'),
+  import('../MovieDetailsPage/MovieDetailsPage'),
 );
 
 const MoviesPage = () => {
@@ -30,7 +33,9 @@ const MoviesPage = () => {
       toast.error('Please,enter the correct request!');
       return;
     }
+
     history.push({ ...location, search: `?query=${query}` });
+    setQuery('');
   };
 
   useEffect(() => {
@@ -47,7 +52,8 @@ const MoviesPage = () => {
   }, [location.search]);
 
   return (
-    <Suspense fallback={<Loader type="TailSpin" color="#red" />}>
+    <Suspense fallback={<Loader />}>
+      <PageHeading text="Find a movie to your liking" />
       <Switch>
         <Route path="/movies/:movieId" component={MovieDetailsPage} />
         <Route
@@ -82,6 +88,7 @@ const MoviesPage = () => {
                   </Link>
                 ))}
               </ul>
+
               {/* <MovieList movies={movies} /> */}
             </>
           )}

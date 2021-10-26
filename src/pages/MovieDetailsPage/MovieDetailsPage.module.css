@@ -1,0 +1,100 @@
+.movieCard {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  font-family: sans-serif;
+}
+
+.movieCardInfo {
+  margin-left: 15px;
+}
+
+.poster {
+  width: 250px;
+  height: auto;
+  margin-bottom: 15px;
+  border-radius: 10px;
+
+}
+.poster:hover{
+  transform: scale(1.03);
+  box-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: cadetblue;
+}
+.title:hover,
+.title:focus {
+text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+
+}
+
+.score {
+  text-transform: capitalize;
+}
+
+.genreList {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.genreList li {
+  margin-right: 10px;
+}
+.additionalInfo {
+  font-family: sans-serif;
+}
+
+.adInfoList li {
+  margin-bottom: 5px;
+}
+
+.link {
+  color: blue;
+}
+.btn{
+display: block;
+margin-bottom: 20px;
+width: 100px;
+height: 40px;
+background-color: rgb(0, 204, 255);
+border-radius: 10px;
+}
+
+.btn:hover,
+.btn:focus{
+  cursor: pointer;
+  background-color: gold;
+  transform: scale(1.03);
+  box-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
+.text {
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 15px;
+color: rgb(50, 97, 46);
+text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
+.span{
+  display: inline-block;
+    font-size: 20px;
+    color: rgb(39, 226, 185);
+    margin-bottom: 10px;
+  }
+
+.titleOver{
+  font-size: 20px;
+  font-weight: bold;
+  color: aqua;
+}
+.review{
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}

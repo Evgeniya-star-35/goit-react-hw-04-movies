@@ -1,18 +1,29 @@
 import PropTypes from 'prop-types';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import s from './MovieList.module.css';
+// import { posterUrl } from '../../Services/API';
+// import Reviews from '../../pages/Reviews/Reviews';
 
 export default function MovieList({ movies }) {
-  const { url } = useRouteMatch();
+  const location = useLocation();
 
   return (
     <div>
       {movies.length && (
         <ul>
           {movies.map(movie => (
-            <Link key={movie.id} to={`${url}/${movie.id}`} className={s.link}>
-              <li className={s.title}>{movie.original_title || movie.name}</li>
-            </Link>
+            <li className={s.title} key={movie.id}>
+              <Link
+                to={{
+                  pathname: `/movies/${movie.id}`,
+
+                  // в state можно передавать информацию, откуда ты пришел на эту страницу
+                  state: { from: location },
+                }}
+              >
+                {movie.original_title || movie.name}
+              </Link>
+            </li>
           ))}
         </ul>
       )}

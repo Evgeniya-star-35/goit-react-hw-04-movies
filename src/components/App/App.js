@@ -1,14 +1,13 @@
-// import { useState, useEffect } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../_pages/HomePage/HomePage';
-import MoviesPage from '../_pages/MoviesPage/MoviesPage';
-
+import HomePage from '../../pages/HomePage/HomePage';
+import MoviesPage from '../../pages/MoviesPage/MoviesPage';
+import MovieDetailsPage from '../../pages/MovieDetailsPage/MovieDetailsPage';
 import Container from '../Container';
 import AppBar from '../AppBar/AppBar';
-import NotFoundMovie from '../_pages/NotFoundMovie/NotFoundMovie';
+import NotFoundMovie from '../../pages/NotFoundMovie/NotFoundMovie';
 
 // import NoFound from '../NoFound';
 
@@ -23,10 +22,13 @@ function App() {
           <HomePage />
         </Route>
 
-        <Route path="/movies" exact>
+        <Route path="/movies">
           <MoviesPage />
         </Route>
 
+        {/* <Route path="/movies/:movieId">
+          <MovieDetailsPage />
+        </Route> */}
         <Route>
           <NotFoundMovie />
         </Route>

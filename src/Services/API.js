@@ -31,14 +31,11 @@ const fetchSearchMovies = async query => {
 //запрос полной информации о фильме для страницы кинофильма.
 const fetchMovieById = async movieId => {
   try {
-    const {
-      data: { results },
-    } = await axios.get(
-      `search/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
+    const response = await axios.get(
+      `/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
     );
-
-    console.log(results);
-    return results;
+    // console.log(data);
+    return response.data;
   } catch (error) {
     console.log(error.message);
   }
@@ -48,14 +45,12 @@ const fetchMovieById = async movieId => {
 
 const fetchMovieByCast = async movieId => {
   try {
-    const {
-      data: { results },
-    } = await axios.get(
-      `search/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
+    const results = await axios.get(
+      `movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
     );
 
     console.log(results);
-    return results;
+    return results.data.cast;
   } catch (error) {
     console.log(error.message);
   }
@@ -65,14 +60,11 @@ const fetchMovieByCast = async movieId => {
 
 const fetchMovieReviews = async movieId => {
   try {
-    const {
-      data: { results },
-    } = await axios.get(
-      `search/movie/${movieId}/review?api_key=${API_KEY}&language=en-US`,
+    const { data } = await axios.get(
+      `movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`,
     );
-
-    console.log(results);
-    return results;
+    // console.log(data);
+    return data.results;
   } catch (error) {
     console.log(error.message);
   }

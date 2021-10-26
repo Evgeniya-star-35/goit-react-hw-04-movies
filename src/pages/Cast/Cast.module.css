@@ -1,0 +1,46 @@
+.CastGallery {
+  display: grid;
+  max-width: calc(100vw - 48px);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 16px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.CastGalleryItem {
+  border-radius: 5px;
+  border: 2px solid rgb(17, 0, 255);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+.ItemImage {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  height: 150px;
+  object-fit: contain;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+ .ItemImage:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+    
+  }
+  .text{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: rgb(8, 30, 58);
+    text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+  }
+  .textName{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(39, 6, 36);
+    text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+  }
