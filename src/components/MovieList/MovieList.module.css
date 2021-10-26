@@ -7,11 +7,7 @@
   list-style: none;
   margin: 10px auto 0;
 } */
-.title{
-  font-weight: 500;
-  font-size: 24px;
-  color:rgb(93, 236, 217);
-}
+
 /* .movie-card {
   border-radius: 4px;
   transition: all 250ms ease;
@@ -20,7 +16,15 @@
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.36), 0px 4px 4px rgba(0, 0, 0, 0.36),
     0px 1px 1px rgba(0, 0, 0, 0.42);
 } */
-
+ul{
+  list-style: none;
+}
+.title{
+  font-weight: 500;
+  font-size: 24px;
+  color:rgb(93, 236, 217);
+  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
 .title:hover {
   transform: scale(1.01);
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),

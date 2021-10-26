@@ -40,14 +40,14 @@ const MovieDetailsPage = () => {
       });
   }, [movieId]);
 
-  const makeVisibleCast = () => {
+  const createVisibleCast = () => {
     if (isVisibleReviews === true) {
       setIsVisibleReviews(false);
     }
     setIsVisibleCast(true);
   };
 
-  const makeVisibleReviews = () => {
+  const createVisibleReviews = () => {
     if (isVisibleCast === true) {
       setIsVisibleCast(false);
     }
@@ -93,7 +93,7 @@ const MovieDetailsPage = () => {
                 to={{
                   pathname: `${url}/cast`,
                 }}
-                onClick={makeVisibleCast}
+                onClick={createVisibleCast}
               >
                 Cast
               </NavLink>
@@ -103,7 +103,7 @@ const MovieDetailsPage = () => {
                 to={{
                   pathname: `${url}/reviews`,
                 }}
-                onClick={makeVisibleReviews}
+                onClick={createVisibleReviews}
               >
                 Reviews
               </NavLink>

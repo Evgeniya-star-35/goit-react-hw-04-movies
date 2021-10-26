@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import Api from '../../Services/API';
 import PageHeading from '../../components/PageHeading/PageHeading';
 import MovieList from '../../components/MovieList/MovieList';
 
-export default function HomeViews() {
+export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {

@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link, useLocation } from 'react-router-dom';
 import s from './MovieList.module.css';
-// import { posterUrl } from '../../Services/API';
-// import Reviews from '../../pages/Reviews/Reviews';
 
 export default function MovieList({ movies }) {
   const location = useLocation();

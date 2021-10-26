@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import Api from '../../Services/API'; //import файла, который прописывает логику настроек Api для http-запросов
+import Api from '../../Services/API';
 import s from './Cast.module.css';
 import { useParams } from 'react-router-dom';
-import defaultImg from '../../noFound.jpg';
+import defaultImg from '../../images/noFound.jpg';
 import { useState, useEffect } from 'react';
 
 export default function Cast() {

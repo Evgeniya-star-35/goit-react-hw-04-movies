@@ -53,7 +53,7 @@ const MoviesPage = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <PageHeading text="Find a movie to your liking" />
+      <PageHeading text="Find any photo you like!" />
       <Switch>
         <Route path="/movies/:movieId" component={MovieDetailsPage} />
         <Route

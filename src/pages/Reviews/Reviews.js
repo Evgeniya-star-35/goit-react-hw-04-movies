@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Api from '../../Services/API';
 import s from './Reviews.module.css';
 
-const MOVIE_PREVIEW_URL = 'https://image.tmdb.org/t/p/w400';
+// const MOVIE_PREVIEW_URL = 'https://image.tmdb.org/t/p/w400';
 
 export default function Reviews() {
   const { movieId } = useParams();

@@ -30,3 +30,6 @@
 .link {
   text-decoration: none;
 }
+.link:hover{
+  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+}
