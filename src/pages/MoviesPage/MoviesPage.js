@@ -1,17 +1,16 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Switch, Route, Link, useHistory, useLocation } from 'react-router-dom';
+import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import PageHeading from '../../components/PageHeading';
-// import NoFound from '../../NoFound';
-/*instruments*/
 import queryString from 'query-string';
-import Api from '../../Services/API';
-import s from './MoviesPage.module.css';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-/* components */
-const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
+import s from './MoviesPage.module.css';
 
+/* components */
+import Api from '../../Services/API';
+import PageHeading from '../../components/PageHeading';
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
+const MovieList = lazy(() => import('../../components/MovieList'));
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
@@ -68,8 +67,10 @@ const MoviesPage = () => {
                   <span>Search</span>
                 </button>
               </form>
-
-              <ul className={s.list}>
+              <>
+                <MovieList movies={movies} />
+              </>
+              {/* <ul className={s.list}>
                 {movies.map(movie => (
                   <Link
                     key={movie.id}
@@ -84,7 +85,7 @@ const MoviesPage = () => {
                     <li className={s.title}>{movie.title || movie.name}</li>
                   </Link>
                 ))}
-              </ul>
+              </ul> */}
             </>
           )}
         />
