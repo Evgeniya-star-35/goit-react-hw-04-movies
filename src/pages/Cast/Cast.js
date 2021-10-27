@@ -11,7 +11,13 @@ export default function Cast() {
 
   useEffect(() => {
     Api.fetchMovieByCast(movieId)
-      .then(res => setCasts(res))
+      .then(res => {
+        setCasts(res);
+        window.scrollTo({
+          top: document.documentElement.clientWidth,
+          behavior: 'smooth',
+        });
+      })
       .catch(error => {
         console.log(error.message);
       });
