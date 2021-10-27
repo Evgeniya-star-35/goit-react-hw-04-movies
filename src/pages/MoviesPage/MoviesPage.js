@@ -31,19 +31,18 @@ const MoviesPage = () => {
     }
 
     history.push({ ...location, search: `?query=${query}` });
-    setQuery('');
+    reset();
   };
-
+  const reset = () => setQuery('');
   useEffect(() => {
     const movie = queryString.parse(location.search).query;
     if (!movie) {
       setMovies([]);
-      setQuery('');
+      // setQuery('');
     }
-
-    if (location.search) {
+    if (movie) {
       Api.fetchSearchMovies(movie).then(res => setMovies(res));
-      setQuery(movie);
+      setQuery('');
     }
   }, [location.search]);
 
