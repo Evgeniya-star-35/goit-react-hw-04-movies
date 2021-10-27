@@ -1,6 +1,6 @@
 
 .title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   margin: 0;
   margin-bottom: 10px;
@@ -13,13 +13,13 @@
 .text {
   margin: 0;
   /* color: rgb(243, 131, 131); */
-    color: #4a9feb;
-  font-size: 15px;
+    color: #0b131b;
+  font-size: 18px;
   font-weight: 500;
   text-align: center;
 }
 .text:hover{
-  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+  text-shadow: 3px 3px 10px rgb(228, 105, 125), -3px -3px 10px yellow;
 
 }
 .noReview {

@@ -10,7 +10,6 @@ justify-content: space-evenly;
 .activeLink{
   text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
     color: #101921;
-  /* color: crimson; */
 }
 .navItem{
   font-size: 30px;
