@@ -95,6 +95,7 @@ const MovieDetailsPage = () => {
           <span role="img" aria-label="camera">
             &nbsp;🎥
           </span>
+
           <ul className={s.navList}>
             <li className={s.navItem}>
               <NavLink

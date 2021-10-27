@@ -25,20 +25,24 @@ export default function Cast() {
 
   return (
     <>
-      <ul className={s.CastGallery}>
-        {casts.map(({ id, name, character, profile_path }) => (
-          <li key={id} className={s.CastGalleryItem}>
-            <img
-              src={profile_path ? `${castUrl}${profile_path}` : defaultImg}
-              alt={name}
-              width="92"
-              className={s.ItemImage}
-            />
-            <p className={s.text}>{name}</p>
-            <p className={s.textName}>Character: {character}</p>
-          </li>
-        ))}
-      </ul>
+      {casts && casts.length > 0 ? (
+        <ul className={s.CastGallery}>
+          {casts.map(({ id, name, character, profile_path }) => (
+            <li key={id} className={s.CastGalleryItem}>
+              <img
+                src={profile_path ? `${castUrl}${profile_path}` : defaultImg}
+                alt={name}
+                width="92"
+                className={s.ItemImage}
+              />
+              <p className={s.text}>{name}</p>
+              <p className={s.textName}>Character: {character}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={s.noInfo}>We have no information about the cast.</p>
+      )}
     </>
   );
 }

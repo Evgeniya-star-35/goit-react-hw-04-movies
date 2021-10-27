@@ -44,3 +44,11 @@
     color: rgb(39, 6, 36);
     text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
   }
+  .noInfo{
+    font-weight: bold;
+  font-size: 25px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: rgb(6, 13, 14);
+  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+  }
