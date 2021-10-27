@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Switch, Route, Link, useHistory, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import PageHeading from '../../components/PageHeading/PageHeading';
+import PageHeading from '../../components/PageHeading';
 // import NoFound from '../../NoFound';
 /*instruments*/
 import queryString from 'query-string';
@@ -85,8 +85,6 @@ const MoviesPage = () => {
                   </Link>
                 ))}
               </ul>
-
-              {/* <MovieList movies={movies} /> */}
             </>
           )}
         />

@@ -6,7 +6,7 @@ const fetchTrending = async () => {
   try {
     const {
       data: { results },
-    } = await axios.get(`trending/all/week?api_key=${API_KEY}`);
+    } = await axios.get(`trending/movie/day?api_key=${API_KEY}`);
     return results;
   } catch (error) {
     console.log(error.message);

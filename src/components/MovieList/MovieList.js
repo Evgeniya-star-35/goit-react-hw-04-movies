@@ -7,22 +7,22 @@ export default function MovieList({ movies }) {
 
   return (
     <div>
-      {movies.length && (
-        <ul>
-          {movies.map(movie => (
-            <li className={s.title} key={movie.id}>
-              <Link
-                to={{
-                  pathname: `/movies/${movie.id}`,
-                  state: { from: location },
-                }}
-              >
-                {movie.original_title || movie.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* {movies.length && ( */}
+      <ul>
+        {movies.map(movie => (
+          <li className={s.title} key={movie.id}>
+            <Link
+              to={{
+                pathname: `/movies/${movie.id}`,
+                state: { from: location },
+              }}
+            >
+              {movie.original_title || movie.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {/* )} */}
     </div>
   );
 }
