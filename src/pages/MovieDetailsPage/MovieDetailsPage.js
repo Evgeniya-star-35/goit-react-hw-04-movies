@@ -90,8 +90,8 @@ const MovieDetailsPage = () => {
             </span>
           }
           <hr />
-          <span className={s.addInfo}>Additional information</span>
-          <span role="img" aria-label="face emoji">
+          <p className={s.addInfo}>Additional information</p>
+          <span role="img" aria-label="camera">
             &nbsp;🎥
           </span>
           <ul className={s.navList}>

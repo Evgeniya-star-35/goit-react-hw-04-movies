@@ -13,10 +13,10 @@ export default function Cast() {
     Api.fetchMovieByCast(movieId)
       .then(res => {
         setCasts(res);
-        window.scrollTo({
-          top: document.documentElement.clientWidth,
-          behavior: 'smooth',
-        });
+        // window.scrollTo({
+        //   top: document.documentElement.clientWidth,
+        //   behavior: 'smooth',
+        // });
       })
       .catch(error => {
         console.log(error.message);
