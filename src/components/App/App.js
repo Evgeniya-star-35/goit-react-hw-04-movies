@@ -2,14 +2,24 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { lazy, Suspense } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import HomePage from '../../pages/HomePage/HomePage';
-import MoviesPage from '../../pages/MoviesPage/MoviesPage';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import Container from '../Container';
-import AppBar from '../AppBar/AppBar';
-import NotFoundMovie from '../../pages/NotFoundMovie/NotFoundMovie';
+import AppBar from '../AppBar';
 
+const HomePage = lazy(() =>
+  import('../../pages/HomePage' /* webpackChunkName: "homePage" */),
+);
+const MoviesPage = lazy(() =>
+  import(
+    '../../pages/MoviesPage/MoviesPage' /* webpackChunkName: "MoviesPage" */
+  ),
+);
+const NotFoundMovie = lazy(() =>
+  import(
+    '../../pages/NotFoundMovie/NotFoundMovie.js' /* webpackChunkName: "NotFoundMovie" */
+  ),
+);
 function App() {
   return (
     <Suspense fallback={<Loader />}>

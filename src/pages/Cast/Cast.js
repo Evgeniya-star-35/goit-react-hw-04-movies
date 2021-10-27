@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types';
-
-import Api from '../../Services/API';
-import s from './Cast.module.css';
-import { useParams } from 'react-router-dom';
-import defaultImg from '../../images/noFound.jpg';
 import { useState, useEffect } from 'react';
-
+import { useParams } from 'react-router-dom';
+import Api from '../../Services/API';
+import { castUrl } from '../../Services/API';
+import s from './Cast.module.css';
+import defaultImg from '../../images/noFound.jpg';
 export default function Cast() {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
@@ -18,21 +17,13 @@ export default function Cast() {
       });
   }, [movieId]);
 
-  // window.scrollTo({
-  //   top: document.documentElement.scrollHeight,
-  //   behavior: 'smooth',
-
   return (
     <>
       <ul className={s.CastGallery}>
         {casts.map(({ id, name, character, profile_path }) => (
           <li key={id} className={s.CastGalleryItem}>
             <img
-              src={
-                profile_path
-                  ? `https://image.tmdb.org/t/p/w92/${profile_path}`
-                  : defaultImg
-              }
+              src={profile_path ? `${castUrl}${profile_path}` : defaultImg}
               alt={name}
               width="92"
               className={s.ItemImage}

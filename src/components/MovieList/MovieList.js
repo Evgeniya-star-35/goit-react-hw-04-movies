@@ -14,8 +14,6 @@ export default function MovieList({ movies }) {
               <Link
                 to={{
                   pathname: `/movies/${movie.id}`,
-
-                  // в state можно передавать информацию, откуда ты пришел на эту страницу
                   state: { from: location },
                 }}
               >

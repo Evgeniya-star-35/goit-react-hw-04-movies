@@ -49,7 +49,6 @@ const fetchMovieByCast = async movieId => {
       `movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
     );
 
-    console.log(results);
     return results.data.cast;
   } catch (error) {
     console.log(error.message);
@@ -79,4 +78,5 @@ const Api = {
 };
 export const posterUrl = 'https://image.tmdb.org/t/p/w500';
 export const profileUrl = 'http://image.tmdb.org/t/p/w185';
+export const castUrl = 'https://image.tmdb.org/t/p/w92';
 export default Api;

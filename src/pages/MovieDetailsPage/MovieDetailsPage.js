@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
+import Loader from 'react-loader-spinner';
 import {
   NavLink,
   Route,
@@ -9,17 +9,16 @@ import {
   useParams,
   useRouteMatch,
 } from 'react-router-dom';
+
 /* instruments */
 import Api from '../../Services/API';
 import { posterUrl } from '../../Services/API';
 import s from './MovieDetailsPage.module.css';
-import Loader from 'react-loader-spinner';
+import moviePhoto from '../../images/movie.jpg';
 
-const Cast = lazy(() =>
-  import('../Cast/Cast.js' /* webpackChunkName: "Cast" */),
-);
+const Cast = lazy(() => import('../Cast' /* webpackChunkName: "Cast" */));
 const Reviews = lazy(() =>
-  import('../Reviews/Reviews.js' /* webpackChunkName: "Reviews" */),
+  import('../Reviews' /* webpackChunkName: "Reviews" */),
 );
 
 const MovieDetailsPage = () => {
@@ -69,7 +68,11 @@ const MovieDetailsPage = () => {
       {movie && (
         <>
           <img
-            src={`${posterUrl}${movie.poster_path}`}
+            src={
+              movie.poster_path
+                ? `${posterUrl}${movie.poster_path}`
+                : moviePhoto
+            }
             alt={movie.title}
             className={s.poster}
           />
@@ -80,16 +83,22 @@ const MovieDetailsPage = () => {
           <span className={s.span}>User Score: {movie.vote_average * 10}%</span>
           <h2 className={s.titleOver}>Overview</h2>
           <span className={s.review}>{movie.overview}</span>
-          {<h3>Genres</h3>}
-          {<span>{movie.genres.map(genre => genre.name).join(' ')}</span>}
+          {<h3 className={s.titleGenre}>Genres</h3>}
+          {
+            <span className={s.spanGenre}>
+              {movie.genres.map(genre => genre.name).join(' ')}
+            </span>
+          }
           <hr />
-          <span>Additional information</span>
+          <span className={s.addInfo}>Additional information</span>
           <span role="img" aria-label="face emoji">
-            💥
+            &nbsp;🎥
           </span>
-          <ul>
-            <li>
+          <ul className={s.navList}>
+            <li className={s.navItem}>
               <NavLink
+                className={s.link}
+                activeClassName={s.activeLink}
                 to={{
                   pathname: `${url}/cast`,
                 }}
@@ -98,8 +107,10 @@ const MovieDetailsPage = () => {
                 Cast
               </NavLink>
             </li>
-            <li>
+            <li className={s.navItem}>
               <NavLink
+                className={s.link}
+                activeClassName={s.activeLink}
                 to={{
                   pathname: `${url}/reviews`,
                 }}

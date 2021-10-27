@@ -9,11 +9,8 @@ import Api from '../../Services/API';
 import s from './MoviesPage.module.css';
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import NotFound from '../NotFoundMovie/NotFoundMovie';
 /* components */
-const MovieDetailsPage = lazy(() =>
-  import('../MovieDetailsPage/MovieDetailsPage'),
-);
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
 
 const MoviesPage = () => {
   const [query, setQuery] = useState('');
@@ -53,7 +50,7 @@ const MoviesPage = () => {
 
   return (
     <Suspense fallback={<Loader />}>
-      <PageHeading text="Find any photo you like!" />
+      <PageHeading text="Find the movie you want!" />
       <Switch>
         <Route path="/movies/:movieId" component={MovieDetailsPage} />
         <Route

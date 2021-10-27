@@ -1,14 +1,22 @@
-.movieCard {
-  display: flex;
-  flex-direction: row;
-  margin-top: 5px;
-  font-family: sans-serif;
-}
+.navList{
+display: flex;
+justify-content: space-evenly;
 
-.movieCardInfo {
-  margin-left: 15px;
 }
-
+.link{
+  color:rgb(137, 238, 91);
+  text-decoration: none;
+}
+.activeLink{
+  text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
+    color: #101921;
+  /* color: crimson; */
+}
+.navItem{
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
 .poster {
   width: 250px;
   height: auto;
@@ -25,7 +33,7 @@
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 30px;
-  color: cadetblue;
+  color: rgb(20, 231, 238);
 }
 .title:hover,
 .title:focus {
@@ -54,9 +62,9 @@ text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
   margin-bottom: 5px;
 }
 
-.link {
+/* .link {
   color: blue;
-}
+} */
 .btn{
 display: block;
 margin-bottom: 20px;
@@ -82,14 +90,16 @@ text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
 }
 .span{
   display: inline-block;
+  font-weight: bold;
     font-size: 20px;
-    color: rgb(39, 226, 185);
+    color: rgb(81, 223, 15);
     margin-bottom: 10px;
   }
 
 .titleOver{
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
+  margin-bottom: 10px;
   color: aqua;
 }
 .review{
@@ -97,4 +107,25 @@ text-shadow: 3px 3px 10px red, -3px -3px 10px yellow;
   font-weight: bold;
   font-style: italic;
   color: white;
+}
+.titleGenre{
+font-size: 24px;
+font-weight: bold;
+margin-top: 10px;
+margin-bottom: 10px;
+color: chartreuse;
+}
+.spanGenre{
+  display: inline-block;
+  font-size: 20px;
+  color: aliceblue;
+  margin-bottom: 15px;
+}
+.addInfo{
+  display: inline-block;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(238, 99, 53);
 }

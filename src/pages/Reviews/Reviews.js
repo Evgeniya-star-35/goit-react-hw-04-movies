@@ -1,9 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Api from '../../Services/API';
-import s from './Reviews.module.css';
-
-// const MOVIE_PREVIEW_URL = 'https://image.tmdb.org/t/p/w400';
+// import s from './Reviews.module.css';
 
 export default function Reviews() {
   const { movieId } = useParams();
