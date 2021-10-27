@@ -15,6 +15,7 @@ import Api from '../../Services/API';
 import { posterUrl } from '../../Services/API';
 import s from './MovieDetailsPage.module.css';
 import moviePhoto from '../../images/movie.jpg';
+import NotFound from '../NotFoundMovie';
 
 const Cast = lazy(() => import('../Cast' /* webpackChunkName: "Cast" */));
 const Reviews = lazy(() =>
@@ -65,7 +66,7 @@ const MovieDetailsPage = () => {
       <button className={s.btn} onClick={goBack}>
         <span className={s.text}>Go Back</span>
       </button>
-      {movie && (
+      {movie ? (
         <>
           <img
             src={
@@ -132,6 +133,8 @@ const MovieDetailsPage = () => {
             </Route>
           </Suspense>
         </>
+      ) : (
+        <NotFound />
       )}
     </>
   );

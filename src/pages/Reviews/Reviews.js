@@ -23,7 +23,7 @@ export default function Reviews() {
           ))}
         </ul>
       ) : (
-        <p>We don't have reviews for this movie.</p>
+        <p className={s.noReview}>We don't have reviews for this movie.</p>
       )}
     </>
   );
