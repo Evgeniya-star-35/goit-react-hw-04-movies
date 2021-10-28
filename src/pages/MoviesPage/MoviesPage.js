@@ -1,7 +1,14 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  useRouteMatch,
+  useHistory,
+  useLocation,
+} from 'react-router-dom';
 import { toast } from 'react-toastify';
 import queryString from 'query-string';
+
 import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import s from './MoviesPage.module.css';
@@ -17,6 +24,7 @@ const MoviesPage = () => {
 
   const history = useHistory();
   const location = useLocation();
+  const { path } = useRouteMatch();
 
   const changeHandler = e => {
     const inputQuery = e.target.value;
@@ -50,7 +58,7 @@ const MoviesPage = () => {
     <Suspense fallback={<Loader />}>
       <PageHeading text="Find the movie you want!" />
       <Switch>
-        <Route path="/movies/:movieId" component={MovieDetailsPage} />
+        <Route path={`${path}/:movieId`} component={MovieDetailsPage} />
         <Route
           exact
           path="/movies"

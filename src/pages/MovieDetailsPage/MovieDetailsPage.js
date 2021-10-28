@@ -101,9 +101,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 className={s.link}
                 activeClassName={s.activeLink}
-                to={{
-                  pathname: `${url}/cast`,
-                }}
+                to={`${url}/cast`}
                 onClick={createVisibleCast}
               >
                 Cast
@@ -113,9 +111,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 className={s.link}
                 activeClassName={s.activeLink}
-                to={{
-                  pathname: `${url}/reviews`,
-                }}
+                to={`${url}/reviews`}
                 onClick={createVisibleReviews}
               >
                 Reviews
