@@ -73,7 +73,7 @@ const MovieDetailsPage = () => {
                 activeClassName={s.activeLink}
                 to={{
                   pathname: `${url}/cast`,
-                  state: { from: location?.state?.from ?? '/' },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
                 onClick={createVisibleCast}
               >
@@ -86,7 +86,7 @@ const MovieDetailsPage = () => {
                 activeClassName={s.activeLink}
                 to={{
                   pathname: `${url}/reviews`,
-                  state: { from: location?.state?.from ?? '/' },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
                 onClick={createVisibleReviews}
               >
