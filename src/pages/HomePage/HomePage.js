@@ -19,22 +19,12 @@ export default function HomePage() {
   }, []);
 
   return (
-    <>
-      <Suspense fallback={<Loader />}>
-        <PageHeading text="Trending today" />
-        <Switch>
-          <Route path="/movies/:movieId" component={MovieDetailsPage} />
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <>
-                <MovieList movies={movies} />
-              </>
-            )}
-          />
-        </Switch>
-      </Suspense>
-    </>
+    <Suspense fallback={<Loader />}>
+      <PageHeading text="Trending today" />
+      <Switch>
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
+        <Route exact path="/" render={() => <MovieList movies={movies} />} />
+      </Switch>
+    </Suspense>
   );
 }

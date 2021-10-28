@@ -10,16 +10,16 @@ import {
   useRouteMatch,
 } from 'react-router-dom';
 
-/* instruments */
 import Api from '../../Services/API';
-import { posterUrl } from '../../Services/API';
+import GetMovieInfo from '../../components/InfoAboutMovie';
 import s from './MovieDetailsPage.module.css';
-import moviePhoto from '../../images/movie.jpg';
 import NotFound from '../NotFoundMovie';
 
-const Cast = lazy(() => import('../Cast' /* webpackChunkName: "Cast" */));
+const Cast = lazy(() =>
+  import('../../components/Cast' /* webpackChunkName: "Cast" */),
+);
 const Reviews = lazy(() =>
-  import('../Reviews' /* webpackChunkName: "Reviews" */),
+  import('../../components/Reviews' /* webpackChunkName: "Reviews" */),
 );
 
 const MovieDetailsPage = () => {
@@ -55,53 +55,26 @@ const MovieDetailsPage = () => {
     setIsVisibleReviews(true);
   };
   const goBack = () => {
-    if (location.state && location.state.from) {
-      return history.push(location.state.from);
-      // return history.push(location?.state?.from || routes.home);
-    }
-    history.push('/');
+    history.push(location?.state?.from ?? '/');
   };
   return (
     <>
       <button className={s.btn} onClick={goBack}>
-        <span className={s.text}>Go Back</span>
+        <span className={s.text}>⏪Go Back</span>
       </button>
       {movie ? (
         <>
-          <img
-            src={
-              movie.poster_path
-                ? `${posterUrl}${movie.poster_path}`
-                : moviePhoto
-            }
-            alt={movie.title}
-            className={s.poster}
-          />
-          <h3 className={s.title}>
-            {movie.original_title || movie.name}(
-            {movie.release_date.split('-')[0]})
-          </h3>
-          <span className={s.span}>User Score: {movie.vote_average * 10}%</span>
-          <h2 className={s.titleOver}>Overview</h2>
-          <span className={s.review}>{movie.overview}</span>
-          {<h3 className={s.titleGenre}>Genres</h3>}
-          {
-            <span className={s.spanGenre}>
-              {movie.genres.map(genre => genre.name).join(' ')}
-            </span>
-          }
-          <hr />
-          <p className={s.addInfo}>Additional information</p>
-          <span role="img" aria-label="camera">
-            &nbsp;🎥
-          </span>
+          <GetMovieInfo movie={movie} />
 
           <ul className={s.navList}>
             <li className={s.navItem}>
               <NavLink
                 className={s.link}
                 activeClassName={s.activeLink}
-                to={`${url}/cast`}
+                to={{
+                  pathname: `${url}/cast`,
+                  state: { from: location?.state?.from ?? '/' },
+                }}
                 onClick={createVisibleCast}
               >
                 Cast
@@ -111,7 +84,10 @@ const MovieDetailsPage = () => {
               <NavLink
                 className={s.link}
                 activeClassName={s.activeLink}
-                to={`${url}/reviews`}
+                to={{
+                  pathname: `${url}/reviews`,
+                  state: { from: location?.state?.from ?? '/' },
+                }}
                 onClick={createVisibleReviews}
               >
                 Reviews
@@ -121,11 +97,11 @@ const MovieDetailsPage = () => {
           <hr />
 
           <Suspense fallback={<Loader />}>
-            <Route path={`${path}/:cast`}>
+            <Route path={`${path}/cast`}>
               {movie && isVisibleCast && <Cast />}
             </Route>
 
-            <Route path={`${path}/:reviews`}>
+            <Route path={`${path}/reviews`}>
               {movie && isVisibleReviews && <Reviews />}
             </Route>
           </Suspense>
